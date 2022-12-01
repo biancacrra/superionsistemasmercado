@@ -1,0 +1,228 @@
+* {
+    padding:0;
+    margin:0;
+    vertical-align:baseline;
+    list-style:none;
+    border:0;
+}
+
+body {
+    background-color:#587367;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+/*-------------INDEX /////////LOGIN-------------*/
+
+.conteudo {
+    display: flex; 
+    justify-content:center;
+    
+}
+
+.login-block {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.form {
+    display:flex;
+    flex-direction: column;
+    padding:25px;
+    border: 2px solid #3e413e; 
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px #414241;
+    background-color: #ffffff;
+}
+
+.campo{
+    padding:15px;
+    padding-left:25px;
+    margin-bottom:15px;
+    border: 1px solid #DDD; 
+    border-radius: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+
+
+}
+
+.btn {
+    color: #ffffff;
+    width: 100%;
+    padding:15px; 
+    border-radius: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    
+
+}
+
+.btn-login {
+    background-color: #3d4137;
+    cursor: pointer;
+}
+
+#logo-login {
+    padding-top:100px;
+    padding-bottom:40px;
+}
+
+.titulo {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #0e1109;
+    padding:25px;
+    font-size: 23px;
+}
+
+/*----------------HOMEPAGE-----------------*/
+
+.logo {
+    width: 150px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.logo-cliente {
+    width: 500px;
+    margin-bottom:30px;
+}
+
+.hp-block {
+    width: 100%;
+    text-align: center;
+    padding-top:30px;
+
+}
+.shortcut-block {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width:500px;
+
+}   
+
+#cadastro-prod, #estoque, #cadastro-colab, #venda, #relatorios, #cadastro-cat {
+    cursor: pointer;
+    color:white;
+    padding-top:15px;
+    padding-bottom:15px;
+    border-radius: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+#cadastro-prod, #estoque, #cadastro-colab, #relatorios, .btn-cadastro{
+    background-color: #29367c;
+    color:#ffffff;
+    margin:13px;
+    text-decoration: none;
+}
+
+#venda {
+    background-color: #fa8426;
+    color:#ffffff;
+    margin:15px;
+}
+
+#cadastro-prod:hover, #estoque:hover, #cadastro-colab:hover, #venda:hover, #relatorios:hover, .btn-cadastro:hover{
+    box-shadow: 2px 2px 2px #3e413e;
+    cursor: pointer;
+}
+
+#logout {
+    cursor: pointer;
+    color:white;
+    background-color: #9c1621;
+    padding-top:15px;
+    padding-bottom:15px;
+    border-radius: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    margin-top: 70px;
+    margin-left:150px;
+    margin-right:150px;
+}
+
+#logout:hover, #cadastro-cat:hover {
+    box-shadow: 2px 2px 2px #3e413e;
+}
+
+.btn-shortcut {
+    text-decoration: none;
+    color:white;
+}
+
+/*------------------Cadastro de produtos------------------*/
+
+.logo-cliente-lateral {
+    width:300px;
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+.form-cadastro {
+    margin-top:30px;
+    background-color: #fa8426;
+    width:700px;
+}
+
+.btn-cadastro{
+    background-color: #29367c;
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.titulos-cadastro {
+    margin-bottom: 3px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+
+}
+
+/*------------------Cadastro de categoria-------------------*/
+
+#cadastro-cat {
+    cursor: pointer;
+    color:white;
+    background-color: #ec2121;
+    border-radius: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 25px;
+    margin-top: 18px;
+}
+
+.return-block {
+    margin-top:20px;
+
+}
+
+.btn-return {
+    font-size: 15px;
+    text-decoration: none;
+    color: #000000;
+    border-radius: 10px;
+    padding:5px;
+}
+
+.btn-return:hover {
+
+}
+
+.icon {
+    width: 15px;
+    cursor: pointer;
+}
+
+.cancelicon{
+    float: right;
+    clear: both;
+    width: 30px;
+}
