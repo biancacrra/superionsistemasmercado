@@ -1,24 +1,14 @@
 <?php
+$hostname = "localhost";
+$database = "mercadosystem";
+$user = "root";
+$password = "";
 
-$server = "localhost";
-$user = "postgres";
-$password = "123456";
-$port = "5432";
+$mysqli = new mysqli ($hostname, $user, $password, $database);
 
-$infos_conexao = "host=$server port=$port dbname=mercadosystem user=$user password=$password";
-
-$conexao = pg_connect($infos_conexao) or
-die ("Nao deu");
-echo "Tudo certo"
-
-
-
-
-
-
-
-
-
-
+if ($mysqli->connect_errno) {
+    die('Falha ao se conectar ao BD');
+}
 
 ?>
+
