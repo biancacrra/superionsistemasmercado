@@ -1,28 +1,9 @@
 <?php
-include ('database.php');
-include('login.php');
-
-if(isset($_POST['email']) || isset($_POST['senha'])) {
-
-    if($_POST['email'] == ''){
-        echo "preencha o email";
-    }else if ($_POST['senha'] == ''){
-        echo "senha inválida";
-    }else {
-
-        $email = ($_POST['email']);
-        $senha = ($_POST['senha']);
-
-        $sql_code = 
-        "SELECT * FROM usuario WHERE email = '$email' && senha = '$senha'";
-        $sql_query = $conexao -> query($sql_code) or die();
-    }
-    
-
-
-
+session_start();
+if (isset($_SESSION['logado'])) {
+    header("location: homepageadm.php");
+    die();
 }
-
 
 ?>
 
@@ -46,8 +27,8 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
             <img id="logo-login" src="imgs/logosistema.png">
             <form class="form" method="POST" action="./login.php">
                 <h3 class="titulo" >Seja bem vindo(a) colaborador(a)! <br> Realize seu login:</h3>
-                <input class="campo" name="email" placeholder="Digite seu email">
-                <input class="campo" name="senha" type="password" placeholder="Digite sua senha">
+                <input class="campo" name="email" placeholder="Digite seu email" required>
+                <input class="campo" name="senha" type="password" placeholder="Digite sua senha" required>
                 <input class="btn btn-login" type="submit" value="Acessar">
             </form>
         </div>
