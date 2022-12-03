@@ -1,3 +1,20 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['logado'])){
+    header("location:index.php");
+    session_destroy();
+}
+
+if(isset($_GET['logout'])){
+    header("location:index.php");
+    session_destroy();
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -22,7 +39,7 @@
                 <div id="cadastro-colab"><a href="cadastrocolab.php" class="btn-shortcut cad-col">Cadastro de colaboradores</a></div>
                 <div id="relatorios"><a class="btn-shortcut rel">Gerar relatórios</a></div>
                 <div id="venda"><a class="btn-shortcut btn-venda">Realizar venda</a></div>
-                <div id="logout"><a class="btn-shortcut btn-logout">Finalizar sessão</a></div>
+                <div id="logout"><a href="?logout" class="btn-shortcut btn-logout">Finalizar sessão</a></div>
             </div>
         </section>
     </div>
