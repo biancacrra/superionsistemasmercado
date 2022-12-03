@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['logado'])){
+    header("location:index.php");
+    session_destroy();
+}
+
+if(isset($_GET['logout'])){
+    header("location:index.php");
+    session_destroy();
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
