@@ -96,7 +96,7 @@ body {
     padding-top:30px;
 
 }
-.shortcut-block {
+.shortcut-block{
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -212,9 +212,6 @@ body {
     padding:5px;
 }
 
-.btn-return:hover {
-
-}
 
 .icon {
     width: 15px;
@@ -226,3 +223,7 @@ body {
     clear: both;
     width: 30px;
 }
+
+
+/*------------------Cadastro de funcionário-------------------*/
+
