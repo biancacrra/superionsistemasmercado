@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['logado'])){
+if (!isset($_SESSION['caixalogado'])) {
     header("location:index.php");
     session_destroy();
 }
 
-if(isset($_GET['logout'])){
+if (isset($_GET['logout'])) {
     header("location:index.php");
     session_destroy();
 }
@@ -31,7 +31,7 @@ if(isset($_GET['logout'])){
         <section class="conteudo">
             <div class="shortcut-block">
                 <div id="venda"><a class="btn-shortcut btn-venda">Realizar venda</a></div>
-                <div id="logout"><a class="btn-shortcut btn-logout">Finalizar sessão</a></div>
+                <div id="logout" ><a href="?logout" class="btn-shortcut btn-logout">Finalizar sessão</a></div>
             </div>
         </section>
     </div>
