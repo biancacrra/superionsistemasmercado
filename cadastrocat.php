@@ -1,4 +1,5 @@
 <?php
+include('database.php');
 session_start();
 
 if(!isset($_SESSION['logado'])){
@@ -10,6 +11,17 @@ if(isset($_GET['logout'])){
     header("location:index.php");
     session_destroy();
 }
+
+
+if (isset($_POST['cadastrar'])) {
+    $nome_cat = $_POST['nome-cat'];
+    $descricao_cat = $_POST['descricao-cat'];
+    $query = mysqli_query($mysqli, 
+    "INSERT INTO categoria (nome_categoria, descricao) 
+    VALUES ('$nome_cat', '$descricao_cat') ");
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -30,14 +42,14 @@ if(isset($_GET['logout'])){
 
     <section class="conteudo">
         <div class="cadastro-prod">
-            <form class="form form-cadastro">
+            <form method="POST" class="form form-cadastro">
                 <div><a href="homepageadm.php"><img class="cancelicon" src="imgs/cancel.png"></a></div>
                 <h3 class="titulo">Cadastrar nova categoria:</h3>
                 <label class="titulos-cadastro" for="nome-cat">Nome da categoria:</label>
                 <input class="campo" type="text" name="nome-cat" id="nome-cat" placeholder="Digite o nome da categoria" required>
                 <label class="titulos-cadastro" for="descricao-cat">Descrição:</label>
                 <textarea name="descricao-cat" id="descricao-cat" class="campo" placeholder="Digite uma breve descrição da categoria."></textarea>
-                <input class="btn btn-cadastro campo" type="submit" value="Cadastrar nova categoria">
+                <input class="btn btn-cadastro campo" name="cadastrar" type="submit" value="Cadastrar nova categoria">
                 <div class="return-block">
                     <a href="cadastroprod.php"><img class="icon" src="imgs/backicon.png"></a>
                     <a class="btn-return" href="cadastroprod.php">Retornar ao cadastro de produtos</a>
