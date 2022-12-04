@@ -1,10 +1,9 @@
 <?php
 session_start();
-if (isset($_SESSION['logado'])) {
+if (isset($_SESSION['admlogado'])) {
     header("location: homepageadm.php");
     die();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +25,7 @@ if (isset($_SESSION['logado'])) {
         <div class="login-block">
             <img id="logo-login" src="imgs/logosistema.png">
             <form class="form" method="POST" action="./login.php">
-                <h3 class="titulo" >Seja bem vindo(a) colaborador(a)! <br> Realize seu login:</h3>
+                <h3 class="titulo">Seja bem vindo(a) colaborador(a)! <br> Realize seu login:</h3>
                 <input class="campo" name="email" placeholder="Digite seu email" required>
                 <input class="campo" name="senha" type="password" placeholder="Digite sua senha" required>
                 <input class="btn btn-login" type="submit" value="Acessar">
