@@ -1,7 +1,8 @@
 <?php
+include("database.php");
 session_start();
 
-if(!isset($_SESSION['logado'])){
+if(!isset($_SESSION['admlogado'])){
     header("location:index.php");
     session_destroy();
 }
@@ -10,6 +11,24 @@ if(isset($_GET['logout'])){
     header("location:index.php");
     session_destroy();
 }
+
+if (isset($_POST['cadastrar'])) {
+    $nome = $_POST['nome-col'];
+    $sobrenome = $_POST['sobrenome-col'];
+    $email = $_POST['email-col'];
+    $senha = md5($_POST['senha-col']);
+    $cargo = $_POST['cargo'];
+        if ($cargo == "adm"){
+            $cargo = 1;
+        }else{
+            $cargo = 2;
+        }
+    $query = mysqli_query ($mysqli,
+    "INSERT INTO usuario (nome, sobrenome, email, senha, cargo) 
+    VALUES ('$nome', '$sobrenome', '$email', '$senha', '$cargo') ");
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -29,12 +48,12 @@ if(isset($_GET['logout'])){
 
     <section class="conteudo">
         <div class="cadastro-prod">
-            <form class="form form-cadastro">
+            <form method="POST" class="form form-cadastro">
                 <div><a href="homepageadm.php"><img class="cancelicon" src="imgs/cancel.png"></a></div>
                 <h3 class="titulo">Cadastrar novo(a) colaborador(a):</h3>
 
                 <label class="titulos-cadastro" for="nome-col">Nome:</label>
-                <input class="campo" type="text" name="nome-col" id="nome-cat" placeholder="ex: Maria" required>
+                <input class="campo" type="text" name="nome-col" id="nome-col" placeholder="ex: Maria" required>
 
                 <label class="titulos-cadastro" for="sobrenome-col">Sobrenome:</label>
                 <input class="campo" type="text" name="sobrenome-col" id="sobrenome-col" placeholder="ex: da Silva" required>
@@ -50,16 +69,16 @@ if(isset($_GET['logout'])){
                 <div class="cargo-block">
                     <h3 class="titulos-cadastro">Cargo:</h3>
                     <div class="cargo-input">
-                        <input type="radio" id="adm" name="cargo">
-                        <label for="adm">Administrador</label>
+                        <input type="radio" id="adm" name="cargo" value="adm">
+                        <label for="adm" name="cargo">Administrador</label>
                     </div>
                     <div class="cargo-input">
-                        <input type="radio" id="caixa" name="cargo" checked="">
+                        <input type="radio" id="caixa" name="cargo" value="caixa" checked="">
                         <label for="caixa">Operador de caixa</label>
                     </div>
                 </div>
 
-                <input class="btn btn-cadastro campo" type="submit" value="Cadastrar novo funcionario">
+                <input class="btn btn-cadastro campo" type="submit" name="cadastrar" value="Cadastrar novo funcionario">
                 <div class="return-block">
                     <a href="cadastroprod.php"><img class="icon" src="imgs/backicon.png"></a>
                     <a class="btn-return" href="homepageadm.php">Retornar a homepage</a>
