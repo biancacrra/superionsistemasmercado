@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Dez-2022 às 17:11
+-- Tempo de geração: 06-Dez-2022 às 11:51
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -44,7 +44,9 @@ INSERT INTO `categoria` (`ID_categoria`, `nome_categoria`, `descricao`, `qtde_ca
 (4, 'Massas', 'Tipos de macarrão, lasanha, pastéis, etc.', 0),
 (5, 'Padaria', 'Pães, doces e bolos.', 0),
 (6, 'Bebidas', 'Alcoólicos, águas, refrigerantes, sucos, etc.', 0),
-(7, 'Grãos', 'Tipos de feijão, milho, oleaginosas, etc', 0);
+(7, 'Grãos', 'Tipos de feijão, milho, oleaginosas, etc', 0),
+(8, 'Papelaria', 'Materiais escolares, cartolinas, etc.', 0),
+(9, 'Produtos de limpeza', 'Produtos para a limpeza de casa, veículos, objetos etc.', 0);
 
 -- --------------------------------------------------------
 
@@ -66,9 +68,11 @@ CREATE TABLE `produto` (
 --
 
 INSERT INTO `produto` (`ID_produto`, `nome`, `descricao`, `preco`, `estoque`, `fk_ID_categoria`) VALUES
-(242, 'Cenoura', 'Laranjinha', '2.99', 0, 1),
-(243, 'Filé de alcatra', 'Macio e suculento.', '32.99', 0, 3),
-(244, 'Arroz branco', 'Arroz soltinho, vamos almoçarr?', '4.75', 0, 7);
+(244, 'Arroz branco', 'Arroz soltinho, vamos almoçarr?', '4.75', 8, 7),
+(247, 'Tomate', 'Tomatinho vermelho', '2.89', 12, 1),
+(248, 'Acelga', 'Hortaliça de longos talos.', '0.99', 15, 1),
+(249, 'Brócolis', 'Uma mini árvore comestível', '3.99', 16, 1),
+(250, 'Alvejante', 'Para tirar todas as sujeiras.', '4.99', 4, 9);
 
 -- --------------------------------------------------------
 
@@ -92,7 +96,9 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`id`, `email`, `senha`, `nome`, `sobrenome`, `cargo`) VALUES
 (13, 'joanadacosta@gmail.com', '202cb962ac59075b964b07152d234b70', 'Joana', 'da Costa', 2),
 (14, 'cleberasilva@gmail.com', '202cb962ac59075b964b07152d234b70', 'Cleber', 'Augusto da Silva', 1),
-(16, 'joelsinho02@gmail.com', '202cb962ac59075b964b07152d234b70', 'Joelson', 'Pereira', 2);
+(16, 'joelsinho02@gmail.com', '202cb962ac59075b964b07152d234b70', 'Joelson', 'Pereira', 2),
+(17, 'biancacamilacorrea@gmail.com', '202cb962ac59075b964b07152d234b70', 'Bianca', 'Correa', 1),
+(18, 'manu@gmail.com', '202cb962ac59075b964b07152d234b70', 'Manuela', 'Correa', 1);
 
 --
 -- Índices para tabelas despejadas
@@ -125,19 +131,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `ID_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `ID_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=246;
+  MODIFY `ID_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=252;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Restrições para despejos de tabelas
