@@ -4,6 +4,10 @@ if (isset($_SESSION['admlogado'])) {
     header("location: homepageadm.php");
     die();
 }
+if (isset($_SESSION['caixalogado'])) {
+    header("location: homepagecaixa.php");
+    die();
+}
 ?>
 
 <!DOCTYPE html>
