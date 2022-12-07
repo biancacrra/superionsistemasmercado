@@ -32,4 +32,3 @@ if (!empty($_GET['id'])) {
 header("location:estoque.php")
 
 ?>
-
