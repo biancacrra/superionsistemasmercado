@@ -17,14 +17,6 @@ $sql = "SELECT * FROM produto ORDER BY nome";
 $resultado = $mysqli->query($sql);
 
 
-$sql2 = "SELECT * FROM categoria";
-$resultadoid = $mysqli->query($sql2);
-
-$sql3 = "SELECT COUNT(*) FROM produto";
-$qtde_itens = $mysqli->query($sql3);
-
-
-
 ?>
 
 <!DOCTYPE html>
