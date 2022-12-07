@@ -53,8 +53,6 @@ if (isset($_GET['logout'])) {
                         $categoria[$x] = $registros['nome_categoria'];
                         $x++;
                     }
-
-
                     echo "<select class='campo' id='categoria-opcoes' name='categoria-opcao'>";
                     $opcao = $_POST['categoria-opcao'];
 
