@@ -10,6 +10,8 @@ if (isset($_GET['logout'])) {
     header("location:index.php");
     session_destroy();
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -30,7 +32,7 @@ if (isset($_GET['logout'])) {
         <img class="logo-cliente" src="imgs/logo11_26_1554.png">
         <section class="conteudo">
             <div class="shortcut-block">
-                <div id="venda"><a class="btn-shortcut btn-venda">Realizar venda</a></div>
+                <div id="venda"><a href="venda.php" class="btn-shortcut btn-venda">Realizar venda</a></div>
                 <div id="logout" ><a href="?logout" class="btn-shortcut btn-logout">Finalizar sessão</a></div>
             </div>
         </section>
